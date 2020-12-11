@@ -1,0 +1,78 @@
+import type { IActivityHandler } from "@geocortex/workflow/runtime/IActivityHandler";
+import { ApiService } from "../ApiService";
+import { get } from "../request";
+
+/** An interface that defines the inputs of the activity. */
+export interface GetDepartmentsInputs {
+    /**
+     * @displayName API Service
+     * @description The Elements XS API Service.
+     * @required
+     */
+    apiService: ApiService;
+    /**
+     * @displayName Company ID
+     * @description The ID of the company to find.
+     * @required
+     */
+    companyId: number;
+}
+
+/** An interface that defines the outputs of the activity. */
+export interface GetDepartmentsOutputs {
+    /**
+     * @description The result of the activity.
+     */
+    result: {
+        billingServiceAPIReturnType: any;
+        companyID: number;
+        company_Companies: any;
+        company_Divisions: [];
+        customer_Search_Layout: string;
+        department: string;
+        departmentID: number;
+        locations_Grid_Layout: any;
+        map_GISAssets_Relationship_ViewerID: number;
+        map_Location_Detail_Layout: any;
+        map_Location_LayerID: number;
+        map_Location_Search_GeocodeFormat: string;
+        map_Location_Search_Layout: string;
+        map_Location_Search_ViewerID: number;
+        map_Location_ZoomTo_ViewerID: number;
+        map_Tasks_SpatialReference: string;
+        meterLayout: string;
+        remoteLayout: string;
+        rowVersion: string;
+        serviceOrderCategoryAPI: any;
+        syncAction: number;
+        transmitterLayout: string;
+        ubCompanyID: number;
+        ubServiceURL: string;
+        useAddressOneAlternateGrids: any;
+    }[];
+}
+
+/**
+ * @category Elements XS
+ * @description Get an Elements XS department by company ID.
+ */
+export class GetDepartments implements IActivityHandler {
+    async execute(
+        inputs: GetDepartmentsInputs
+    ): Promise<GetDepartmentsOutputs> {
+        if (!inputs.apiService) {
+            throw new Error("apiService is required");
+        }
+        if (inputs.companyId === undefined) {
+            throw new Error("companyId is required");
+        }
+
+        const response = await get(inputs.apiService, "company/departments", {
+            companyId: inputs.companyId,
+        });
+
+        return {
+            result: response,
+        };
+    }
+}
