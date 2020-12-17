@@ -5,11 +5,10 @@ import { get, post } from "../request";
 /** An interface that defines the inputs of the activity. */
 export interface UseElementsXsServiceInputs {
     /**
-     * @displayName API Service
      * @description The Elements XS API Service.
      * @required
      */
-    apiService: ApiService;
+    service: ApiService;
     /**
      * @description The Elements XS service operation.
      * @required
@@ -93,8 +92,8 @@ export class UseElementsXsService implements IActivityHandler {
     async execute(
         inputs: UseElementsXsServiceInputs
     ): Promise<UseElementsXsServiceOutputs> {
-        if (!inputs.apiService) {
-            throw new Error("apiService is required");
+        if (!inputs.service) {
+            throw new Error("service is required");
         }
         if (!inputs.path) {
             throw new Error("path is required");
@@ -102,7 +101,7 @@ export class UseElementsXsService implements IActivityHandler {
 
         if (inputs.method && inputs.method.toLowerCase() === "post") {
             const response = await post(
-                inputs.apiService,
+                inputs.service,
                 inputs.path,
                 inputs.data
             );
@@ -111,7 +110,7 @@ export class UseElementsXsService implements IActivityHandler {
             };
         } else {
             const response = await get(
-                inputs.apiService,
+                inputs.service,
                 inputs.path,
                 inputs.data
             );

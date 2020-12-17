@@ -29,13 +29,14 @@ export interface AuthenticateAppInputs {
 /** An interface that defines the outputs of the activity. */
 export interface AuthenticateAppOutputs {
     /**
-     * @description The result of the activity.
+     * @description The Elements XS service that can be supplied to other Elements XS activities.
      */
-    result: ApiService;
+    service: ApiService;
 }
 
 /**
  * @category Elements XS
+ * @defaultName xsService
  * @description Authenticates an application with the Elements XS REST API.
  */
 export class AuthenticateApp implements IActivityHandler {
@@ -70,7 +71,7 @@ export class AuthenticateApp implements IActivityHandler {
         const response = await request.json();
 
         return {
-            result: {
+            service: {
                 url: inputs.url,
                 ...response,
             },

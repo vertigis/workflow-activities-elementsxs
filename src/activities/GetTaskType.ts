@@ -5,11 +5,10 @@ import { get } from "../request";
 /** An interface that defines the inputs of the activity. */
 export interface GetTaskTypeInputs {
     /**
-     * @displayName API Service
      * @description The Elements XS API Service.
      * @required
      */
-    apiService: ApiService;
+    service: ApiService;
     /**
      * @displayName ID
      * @description The ID of the task type.
@@ -108,15 +107,15 @@ export interface GetTaskTypeOutputs {
  */
 export class GetTaskType implements IActivityHandler {
     async execute(inputs: GetTaskTypeInputs): Promise<GetTaskTypeOutputs> {
-        if (!inputs.apiService) {
-            throw new Error("apiService is required");
+        if (!inputs.service) {
+            throw new Error("service is required");
         }
         if (inputs.id === undefined) {
             throw new Error("id is required");
         }
 
         const response = await get(
-            inputs.apiService,
+            inputs.service,
             "workmanagement/tasktype",
             {
                 id: inputs.id,

@@ -26,11 +26,12 @@ export interface AuthenticateUserOutputs {
     /**
      * @description The result of the activity.
      */
-    result: ApiService;
+    service: ApiService;
 }
 
 /**
  * @category Elements XS
+ * @defaultName xsService
  * @description Authenticates a user with the Elements XS REST API using a username and password.
  */
 export class AuthenticateUser implements IActivityHandler {
@@ -60,7 +61,7 @@ export class AuthenticateUser implements IActivityHandler {
         });
         const response = await request.json();
         return {
-            result: {
+            service: {
                 url: inputs.url,
                 ...response,
             },

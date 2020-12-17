@@ -5,11 +5,10 @@ import { get } from "../request";
 /** An interface that defines the inputs of the activity. */
 export interface GetDepartmentsInputs {
     /**
-     * @displayName API Service
      * @description The Elements XS API Service.
      * @required
      */
-    apiService: ApiService;
+    service: ApiService;
     /**
      * @displayName Company ID
      * @description The ID of the company to find.
@@ -60,14 +59,14 @@ export class GetDepartments implements IActivityHandler {
     async execute(
         inputs: GetDepartmentsInputs
     ): Promise<GetDepartmentsOutputs> {
-        if (!inputs.apiService) {
-            throw new Error("apiService is required");
+        if (!inputs.service) {
+            throw new Error("service is required");
         }
         if (inputs.companyId === undefined) {
             throw new Error("companyId is required");
         }
 
-        const response = await get(inputs.apiService, "company/departments", {
+        const response = await get(inputs.service, "company/departments", {
             companyId: inputs.companyId,
         });
 

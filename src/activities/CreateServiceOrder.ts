@@ -5,11 +5,10 @@ import { post } from "../request";
 /** An interface that defines the inputs of the activity. */
 export interface CreateServiceOrderInputs {
     /**
-     * @displayName API Service
      * @description The Elements XS API Service.
      * @required
      */
-    apiService: ApiService;
+    service: ApiService;
     /**
      * @displayName Template ID
      * @description The ID of the template.
@@ -47,15 +46,15 @@ export class CreateServiceOrder implements IActivityHandler {
     async execute(
         inputs: CreateServiceOrderInputs
     ): Promise<CreateServiceOrderOutputs> {
-        if (!inputs.apiService) {
-            throw new Error("apiService is required");
+        if (!inputs.service) {
+            throw new Error("service is required");
         }
         if (inputs.templateId === undefined) {
             throw new Error("templateId is required");
         }
 
         const response = await post(
-            inputs.apiService,
+            inputs.service,
             "workmanagement/serviceorders/templates/generate",
             {
                 divisionID: inputs.divisionId,

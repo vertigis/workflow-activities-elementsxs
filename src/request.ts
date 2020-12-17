@@ -1,16 +1,16 @@
 import { ApiService } from "./ApiService";
 
 export async function get(
-    apiService: ApiService,
+    service: ApiService,
     path: string,
     params?: { [key: string]: any }
 ) {
-    if (!apiService.url) {
+    if (!service.url) {
         throw new Error("url is required");
     }
     const qs = objectToQueryString(params);
-    const url = `${apiService.url}/api/${path}${qs ? "?" + qs : ""}`;
-    const authHeader = `Bearer ${apiService.accessToken}`;
+    const url = `${service.url}/api/${path}${qs ? "?" + qs : ""}`;
+    const authHeader = `Bearer ${service.accessToken}`;
     const request = await fetch(url, {
         headers: {
             Authorization: authHeader,
@@ -21,15 +21,15 @@ export async function get(
 }
 
 export async function post(
-    apiService: ApiService,
+    service: ApiService,
     path: string,
     data?: { [key: string]: any }
 ) {
-    if (!apiService.url) {
+    if (!service.url) {
         throw new Error("url is required");
     }
-    const url = `${apiService.url}/api/${path}`;
-    const authHeader = `Bearer ${apiService.accessToken}`;
+    const url = `${service.url}/api/${path}`;
+    const authHeader = `Bearer ${service.accessToken}`;
     const request = await fetch(url, {
         method: "POST",
         headers: {

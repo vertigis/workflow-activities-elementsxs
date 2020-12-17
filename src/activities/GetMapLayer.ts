@@ -5,11 +5,10 @@ import { get } from "../request";
 /** An interface that defines the inputs of the activity. */
 export interface GetMapLayerInputs {
     /**
-     * @displayName API Service
      * @description The Elements XS API Service.
      * @required
      */
-    apiService: ApiService;
+    service: ApiService;
     /**
      * @displayName Layer ID
      * @description The ID of the layer.
@@ -55,14 +54,14 @@ export interface GetMapLayerOutputs {
  */
 export class GetMapLayer implements IActivityHandler {
     async execute(inputs: GetMapLayerInputs): Promise<GetMapLayerOutputs> {
-        if (!inputs.apiService) {
-            throw new Error("apiService is required");
+        if (!inputs.service) {
+            throw new Error("service is required");
         }
         if (inputs.layerId === undefined) {
             throw new Error("layerId is required");
         }
 
-        const response = await get(inputs.apiService, "map/layer", {
+        const response = await get(inputs.service, "map/layer", {
             layerId: inputs.layerId,
         });
 

@@ -5,11 +5,10 @@ import { get } from "../request";
 /** An interface that defines the inputs of the activity. */
 export interface FindUsersInputs {
     /**
-     * @displayName API Service
      * @description The Elements XS API Service.
      * @required
      */
-    apiService: ApiService;
+    service: ApiService;
     /**
      * @description The search where expression.
      * @required
@@ -126,14 +125,14 @@ export interface FindUsersOutputs {
  */
 export class FindUsers implements IActivityHandler {
     async execute(inputs: FindUsersInputs): Promise<FindUsersOutputs> {
-        if (!inputs.apiService) {
-            throw new Error("apiService is required");
+        if (!inputs.service) {
+            throw new Error("service is required");
         }
         if (!inputs.where) {
             throw new Error("where is required");
         }
 
-        const response = await get(inputs.apiService, "people/users/lookup", {
+        const response = await get(inputs.service, "people/users/lookup", {
             where: inputs.where,
             page: inputs.page,
             count: inputs.count,

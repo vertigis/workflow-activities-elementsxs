@@ -5,11 +5,10 @@ import { get } from "../request";
 /** An interface that defines the inputs of the activity. */
 export interface GetMapLayersByCompanyInputs {
     /**
-     * @displayName API Service
      * @description The Elements XS API Service.
      * @required
      */
-    apiService: ApiService;
+    service: ApiService;
     /**
      * @displayName Company ID
      * @description The ID of the company whose layers to find.
@@ -57,14 +56,14 @@ export class GetMapLayersByCompany implements IActivityHandler {
     async execute(
         inputs: GetMapLayersByCompanyInputs
     ): Promise<GetMapLayersByCompanyOutputs> {
-        if (!inputs.apiService) {
-            throw new Error("apiService is required");
+        if (!inputs.service) {
+            throw new Error("service is required");
         }
         if (inputs.companyId === undefined) {
             throw new Error("companyId is required");
         }
 
-        const response = await get(inputs.apiService, "map/layers/bycompany", {
+        const response = await get(inputs.service, "map/layers/bycompany", {
             companyId: inputs.companyId,
         });
 
