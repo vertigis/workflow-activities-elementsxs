@@ -1,6 +1,5 @@
 {
     "name": "@geocortex/workflow-activities-elementsxs",
-    "private": true,
     "version": "0.0.0-semantically-released",
     "description": "Elements XS activities for Geocortex Workflow",
     "repository": {
