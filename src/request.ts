@@ -1,10 +1,10 @@
 import { ApiService } from "./ApiService";
 
-export async function get(
+export async function get<T = any>(
     service: ApiService,
     path: string,
     params?: { [key: string]: any }
-) {
+): Promise<T> {
     if (!service.url) {
         throw new Error("url is required");
     }
@@ -20,11 +20,11 @@ export async function get(
     return response;
 }
 
-export async function post(
+export async function post<T = any>(
     service: ApiService,
     path: string,
     data?: { [key: string]: any }
-) {
+): Promise<T> {
     if (!service.url) {
         throw new Error("url is required");
     }
@@ -42,7 +42,7 @@ export async function post(
     return response;
 }
 
-function objectToQueryString(data?: {}): string {
+function objectToQueryString(data?: Record<string, string | number | boolean>): string {
     if (!data) {
         return "";
     }
