@@ -75,7 +75,7 @@ describe("request", () => {
             await expect(() => post(service, "path")).rejects.toThrow("url is required");
         });
         it("combines url and path", async () => {
-            mockResponseOnce({}, (input, init) => {
+            mockResponseOnce({}, (input) => {
                 expect(input).toBe(`http://test/api/path`);
             });
 

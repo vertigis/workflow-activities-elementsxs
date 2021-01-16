@@ -61,6 +61,12 @@ Interactively generate a new activity or form element.
 
 Runs the project in development mode. Your activity pack will be available at [http://localhost:5000/main.js](http://localhost:5000/main.js). The HTTPS certificate of the development server is a self-signed certificate that web browsers will warn about. To work around this open [`https://localhost:5000/main.js`](https://localhost:5000/main.js) in a web browser and allow the invalid certificate as an exception. For creating a locally-trusted HTTPS certificate see the [Configuring a HTTPS Certificate](https://developers.geocortex.com/docs/workflow/sdk-web-overview/#configuring-a-https-certificate) section on the [Geocortex Developer Center](https://developers.geocortex.com/docs/workflow/overview/).
 
+### `npm run test`
+Runs all unit tests.
+
+### `npm run lint`
+Runs linter to perform static analysis.
+
 ### `npm run build`
 
 Builds the activity pack for production to the `build` folder. It optimizes the build for the best performance.
