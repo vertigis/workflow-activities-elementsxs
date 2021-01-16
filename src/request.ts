@@ -3,7 +3,7 @@ import { ApiService } from "./ApiService";
 export async function get<T = any>(
     service: ApiService,
     path: string,
-    params?: { [key: string]: any }
+    params?: Record<string, string | number | boolean | null | undefined>
 ): Promise<T> {
     if (!service.url) {
         throw new Error("url is required");
@@ -23,7 +23,7 @@ export async function get<T = any>(
 export async function post<T = any>(
     service: ApiService,
     path: string,
-    data?: { [key: string]: any }
+    data?: Record<string, any>
 ): Promise<T> {
     if (!service.url) {
         throw new Error("url is required");
@@ -42,7 +42,7 @@ export async function post<T = any>(
     return response;
 }
 
-function objectToQueryString(data?: Record<string, string | number | boolean>): string {
+function objectToQueryString(data?: Record<string, string | number | boolean | null | undefined>): string {
     if (!data) {
         return "";
     }
