@@ -1,6 +1,7 @@
 // Activities will be re-exported from this file.
 export * from "./activities/AuthenticateApp";
 export * from "./activities/AuthenticateUser";
+export * from "./activities/CreateServiceOrder";
 export * from "./activities/FindUsers";
 export * from "./activities/GetCompany";
 export * from "./activities/GetDepartments";

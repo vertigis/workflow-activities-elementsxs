@@ -90,7 +90,7 @@ export class GetServiceOrder implements IActivityHandler {
 
         const response = await get(
             inputs.service,
-            "workmanagement/serviceorders",
+            "workmanagement/serviceorder",
             {
                 id: inputs.id,
             }
