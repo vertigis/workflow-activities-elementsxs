@@ -11,5 +11,6 @@ export * from "./activities/GetServiceOrder";
 export * from "./activities/GetServiceOrderTemplates";
 export * from "./activities/GetTask";
 export * from "./activities/GetTaskType";
+export * from "./activities/GetUsersByCrew";
 export * from "./activities/GetWorkItem";
 export * from "./activities/UseElementsXsService";
