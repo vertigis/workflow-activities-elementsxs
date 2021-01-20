@@ -120,7 +120,6 @@ export interface GetUsersByCrewOutputs {
 /**
  * @category Elements XS
  * @description Get an Elements XS list of users by crew ID.
- * @helpUrl https://www.google.com
  */
 export class GetUsersByCrew implements IActivityHandler {
     async execute(
