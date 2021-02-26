@@ -51,6 +51,8 @@ export interface GetMapLayerOutputs {
 /**
  * @category Elements XS
  * @description Gets an Elements XS map layer by ID.
+ * @clientOnly
+ * @unsupportedApps GMV
  */
 export class GetMapLayer implements IActivityHandler {
     async execute(inputs: GetMapLayerInputs): Promise<GetMapLayerOutputs> {

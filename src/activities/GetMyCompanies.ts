@@ -49,6 +49,8 @@ export interface GetMyCompaniesOutputs {
 /**
  * @category Elements XS
  * @description Gets the Elements XS companies of a user.
+ * @clientOnly
+ * @unsupportedApps GMV
  */
 export class GetMyCompanies implements IActivityHandler {
     async execute(

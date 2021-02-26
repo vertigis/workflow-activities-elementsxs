@@ -33,6 +33,8 @@ export interface AuthenticateUserOutputs {
  * @category Elements XS
  * @defaultName xsService
  * @description Authenticates a user with the Elements XS REST API using a username and password.
+ * @clientOnly
+ * @unsupportedApps GMV
  */
 export class AuthenticateUser implements IActivityHandler {
     async execute(

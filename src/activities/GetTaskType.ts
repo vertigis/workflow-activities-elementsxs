@@ -104,6 +104,8 @@ export interface GetTaskTypeOutputs {
 /**
  * @category Elements XS
  * @description Gets an Elements XS task type by ID.
+ * @clientOnly
+ * @unsupportedApps GMV
  */
 export class GetTaskType implements IActivityHandler {
     async execute(inputs: GetTaskTypeInputs): Promise<GetTaskTypeOutputs> {

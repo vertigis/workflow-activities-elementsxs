@@ -38,6 +38,8 @@ export interface AuthenticateAppOutputs {
  * @category Elements XS
  * @defaultName xsService
  * @description Authenticates an application with the Elements XS REST API.
+ * @clientOnly
+ * @unsupportedApps GMV
  */
 export class AuthenticateApp implements IActivityHandler {
     async execute(

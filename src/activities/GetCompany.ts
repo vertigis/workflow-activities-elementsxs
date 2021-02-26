@@ -49,6 +49,8 @@ export interface GetCompanyOutputs {
 /**
  * @category Elements XS
  * @description Gets an Elements XS company by ID.
+ * @clientOnly
+ * @unsupportedApps GMV
  */
 export class GetCompany implements IActivityHandler {
     async execute(inputs: GetCompanyInputs): Promise<GetCompanyOutputs> {

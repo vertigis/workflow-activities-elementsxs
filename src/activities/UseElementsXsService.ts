@@ -87,6 +87,8 @@ export interface UseElementsXsServiceOutputs {
  * @displayName Use Elements XS Service
  * @category Elements XS
  * @description Utility activity to generically access any Elements XS REST API operation.
+ * @clientOnly
+ * @unsupportedApps GMV
  */
 export class UseElementsXsService implements IActivityHandler {
     async execute(
