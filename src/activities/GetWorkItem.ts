@@ -114,6 +114,8 @@ export interface GetWorkItemOutputs {
 /**
  * @category Elements XS
  * @description Gets an Elements XS work item by ID.
+ * @clientOnly
+ * @unsupportedApps GMV
  */
 export class GetWorkItem implements IActivityHandler {
     async execute(inputs: GetWorkItemInputs): Promise<GetWorkItemOutputs> {

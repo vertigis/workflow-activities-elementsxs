@@ -84,6 +84,8 @@ export interface GetTaskOutputs {
 /**
  * @category Elements XS
  * @description Gets an Elements XS task by ID.
+ * @clientOnly
+ * @unsupportedApps GMV
  */
 export class GetTask implements IActivityHandler {
     async execute(inputs: GetTaskInputs): Promise<GetTaskOutputs> {

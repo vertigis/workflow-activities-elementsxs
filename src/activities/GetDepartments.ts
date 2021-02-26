@@ -54,6 +54,8 @@ export interface GetDepartmentsOutputs {
 /**
  * @category Elements XS
  * @description Get an Elements XS department by company ID.
+ * @clientOnly
+ * @unsupportedApps GMV
  */
 export class GetDepartments implements IActivityHandler {
     async execute(

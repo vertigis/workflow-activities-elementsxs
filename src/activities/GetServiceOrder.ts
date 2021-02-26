@@ -76,6 +76,8 @@ export interface GetServiceOrderOutputs {
 /**
  * @category Elements XS
  * @description Gets an Elements XS service order by ID.
+ * @clientOnly
+ * @unsupportedApps GMV
  */
 export class GetServiceOrder implements IActivityHandler {
     async execute(

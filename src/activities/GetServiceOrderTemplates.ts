@@ -47,6 +47,8 @@ export interface GetServiceOrderTemplatesOutputs {
 /**
  * @category Elements XS
  * @description Gets Elements XS service order templates.
+ * @clientOnly
+ * @unsupportedApps GMV
  */
 export class GetServiceOrderTemplates implements IActivityHandler {
     async execute(

@@ -51,6 +51,8 @@ export interface GetMapLayersByCompanyOutputs {
 /**
  * @category Elements XS
  * @description Gets Elements XS map layers by company ID.
+ * @clientOnly
+ * @unsupportedApps GMV
  */
 export class GetMapLayersByCompany implements IActivityHandler {
     async execute(

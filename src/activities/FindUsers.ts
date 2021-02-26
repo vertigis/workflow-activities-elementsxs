@@ -122,6 +122,8 @@ export interface FindUsersOutputs {
 /**
  * @category Elements XS
  * @description Searches for Elements XS users.
+ * @clientOnly
+ * @unsupportedApps GMV
  */
 export class FindUsers implements IActivityHandler {
     async execute(inputs: FindUsersInputs): Promise<FindUsersOutputs> {

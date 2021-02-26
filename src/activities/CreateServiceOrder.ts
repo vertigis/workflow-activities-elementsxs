@@ -41,6 +41,8 @@ export interface CreateServiceOrderOutputs {
 /**
  * @category Elements XS
  * @description Create an Elements XS service order from a template.
+ * @clientOnly
+ * @unsupportedApps GMV
  */
 export class CreateServiceOrder implements IActivityHandler {
     async execute(
