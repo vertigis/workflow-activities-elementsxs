@@ -3,7 +3,7 @@
 [![CI/CD](https://github.com/geocortex/workflow-activities-elementsxs/workflows/CI/CD/badge.svg)](https://github.com/geocortex/workflow-activities-elementsxs/actions) 
 [![npm](https://img.shields.io/npm/v/@geocortex/workflow-activities-elementsxs)](https://www.npmjs.com/package/@geocortex/workflow-activities-elementsxs)
 
-This project contains activities for interacting with the [Elements XS REST API](https://salesapi.novotx.com/) in a [VertiGIS Studio Workflow](https://www.vertigisstudio.com/products/geocortex-workflow/).
+This project contains activities for interacting with the [Elements XS REST API](https://salesapi.novotx.com/) in a [VertiGIS Studio Workflow](https://www.vertigisstudio.com/products/vertigis-studio-workflow/).
 
 ## Usage
 
