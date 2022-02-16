@@ -1,7 +1,7 @@
 {
     "name": "@geocortex/workflow-activities-elementsxs",
     "version": "0.0.0-semantically-released",
-    "description": "Elements XS activities for Geocortex Workflow",
+    "description": "Elements XS activities for VertiGIS Studio Workflow",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/geocortex/workflow-activities-elementsxs.git"
