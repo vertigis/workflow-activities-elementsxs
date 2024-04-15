@@ -14,7 +14,7 @@ function mockResponseOnce(
     callback?: (input: RequestInfo, init: RequestInit) => void
 ) {
     global.fetch = mockFetch;
-    mockFetch.mockImplementationOnce((input, init) => {
+    mockFetch.mockImplementationOnce((input: RequestInfo, init: RequestInit) => {
         callback?.(input, init);
         return Promise.resolve({
             ok: true,
