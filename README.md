@@ -1,7 +1,7 @@
 # Elements XS Activities
 
-[![CI/CD](https://github.com/geocortex/workflow-activities-elementsxs/workflows/CI/CD/badge.svg)](https://github.com/geocortex/workflow-activities-elementsxs/actions)
-[![npm](https://img.shields.io/npm/v/@geocortex/workflow-activities-elementsxs)](https://www.npmjs.com/package/@geocortex/workflow-activities-elementsxs)
+[![CI/CD](https://github.com/vertigis/workflow-activities-elementsxs/workflows/CI/CD/badge.svg)](https://github.com/vertigis/workflow-activities-elementsxs/actions)
+[![npm](https://img.shields.io/npm/v/@vertigis/workflow-activities-elementsxs)](https://www.npmjs.com/package/@vertigis/workflow-activities-elementsxs)
 
 This project contains activities for interacting with the [Elements XS REST API](https://salesapi.novotx.com/) in a [VertiGIS Studio Workflow](https://www.vertigisstudio.com/products/vertigis-studio-workflow/).
 
@@ -18,8 +18,10 @@ To use the Elements XS activities in [VertiGIS Studio Workflow Designer](https:/
     - Purpose: `Ready To Use`
     - API: `JavaScript`
     - URL: The URL to this activity pack manifest
-        - Use https://unpkg.com/@geocortex/workflow-activities-elementsxs/activitypack.json for the latest version
-        - Use https://unpkg.com/@geocortex/workflow-activities-elementsxs@0.1.0/activitypack.json for a specific version
+        - Use https://unpkg.com/@vertigis/workflow-activities-elementsxs@1.0.0/activitypack.json for a specific version
+        - Use https://unpkg.com/@vertigis/workflow-activities-elementsxs@1/activitypack.json for the latest revision of a specific major version
+        - Use https://unpkg.com/@vertigis/workflow-activities-elementsxs/activitypack.json for the latest version (not recommended for production use)
+        - Use https://localhost:5000/activitypack.json for a local development version
     - Title: Your desired title
     - Tags: Must include `geocortex-workflow-activity-pack`
 1. Reload [VertiGIS Studio Workflow Designer](https://apps.vertigisstudio.com/workflow/designer/)
@@ -47,7 +49,7 @@ To use the Elements XS activities in [VertiGIS Studio Workflow Designer](https:/
 
 ## Development
 
-This project was bootstrapped with the [VertiGIS Studio Workflow SDK](https://github.com/geocortex/vertigis-workflow-sdk). Before you can use your activity pack in the [VertiGIS Studio Workflow Designer](https://apps.vertigisstudio.com/workflow/designer/), you will need to [register the activity pack](https://developers.vertigisstudio.com/docs/workflow/sdk-web-overview#register-the-activity-pack).
+This project was bootstrapped with the [VertiGIS Studio Workflow SDK](https://github.com/vertigis/vertigis-workflow-sdk). Before you can use your activity pack in the [VertiGIS Studio Workflow Designer](https://apps.vertigisstudio.com/workflow/designer/), you will need to [register the activity pack](https://developers.vertigisstudio.com/docs/workflow/sdk-web-overview#register-the-activity-pack).
 
 ## Available Scripts
 
@@ -60,14 +62,6 @@ Interactively generate a new activity or form element.
 ### `npm start`
 
 Runs the project in development mode. Your activity pack will be available at [http://localhost:5000/main.js](http://localhost:5000/main.js). The HTTPS certificate of the development server is a self-signed certificate that web browsers will warn about. To work around this open [`https://localhost:5000/main.js`](https://localhost:5000/main.js) in a web browser and allow the invalid certificate as an exception. For creating a locally-trusted HTTPS certificate see the [Configuring a HTTPS Certificate](https://developers.vertigisstudio.com/docs/workflow/sdk-web-overview/#configuring-a-https-certificate) section on the [VertiGIS Studio Developer Center](https://developers.vertigisstudio.com/docs/workflow/overview/).
-
-### `npm run test`
-
-Runs all unit tests.
-
-### `npm run lint`
-
-Runs linter to perform static analysis.
 
 ### `npm run build`
 

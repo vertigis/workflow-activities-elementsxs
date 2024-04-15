@@ -1,9 +1,11 @@
-import type { IActivityHandler } from "@geocortex/workflow/runtime/IActivityHandler";
+import type { IActivityHandler } from "@vertigis/workflow/IActivityHandler";
 import { ApiService } from "../ApiService";
 import { get, post } from "../request";
 
 /** An interface that defines the inputs of the activity. */
 export interface UseElementsXsServiceInputs {
+    /* eslint-disable @typescript-eslint/no-redundant-type-constituents */
+
     /**
      * @description The Elements XS API Service.
      * @required
@@ -73,6 +75,8 @@ export interface UseElementsXsServiceInputs {
     data?: {
         [key: string]: any;
     };
+    
+    /* eslint-enable @typescript-eslint/no-redundant-type-constituents */
 }
 
 /** An interface that defines the outputs of the activity. */
